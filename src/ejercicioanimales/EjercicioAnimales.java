@@ -41,7 +41,7 @@ public class EjercicioAnimales {
                 case 1 -> {
                     System.out.println("Opción Ingresar los valores");
                     System.out.println("Información del animal 1");
-                    System.out.print("Ingrese el nombre el primer animal: ");
+                    System.out.print("Ingrese el nombre del primer animal: ");
                     animal1.nombre=scan.nextLine();
                     boolean esIncorrecto=true;
                     do{
@@ -63,10 +63,40 @@ public class EjercicioAnimales {
                 
                     System.out.print("Ingrese el tipo de animal: ");
                     animal1.tipo=scan.nextLine();
-                    System.out.print("Ingrese el habitad del animal: ");
+                    System.out.print("Ingrese el habitat del animal: ");
                     animal1.habitat=scan.nextLine();
                     System.out.print("Ingrese el tipo de alimento: ");
                     animal1.alimento=scan.nextLine();
+                    System.out.println("");
+                    
+                    System.out.println("Información del animal 2");
+                    System.out.print("Ingrese el nombre del segundo animal: ");
+                    animal2.nombre=scan.nextLine();
+                    boolean esIncorrecto2=true;
+                    do{
+                        String entrada;
+                        try{//intente ejecutar la función
+                            System.out.print("Ingrese la edad del animal: ");
+                            entrada=scan.nextLine();
+                           animal2.edad = (short) Integer.parseInt(entrada);
+
+                            esIncorrecto2=false;
+                        }catch(NumberFormatException error){
+                         //catch atrape el error
+                            System.out.println("No ingresó un número");
+                        }
+                        //ciclo loop
+                        //while=mientras se cumple la condición
+                        //mientras la condición tenga valor verdadero true
+                    }while(esIncorrecto2);
+                
+                    System.out.print("Ingrese el tipo de animal: ");
+                    animal2.tipo=scan.nextLine();
+                    System.out.print("Ingrese el habitat del animal: ");
+                    animal2.habitat=scan.nextLine();
+                    System.out.print("Ingrese el tipo de alimento: ");
+                    animal2.alimento=scan.nextLine();
+                    System.out.println("");
                     //se completa los campos de todos los animales
                 }
                 case 2 -> {
@@ -76,8 +106,17 @@ public class EjercicioAnimales {
                     System.out.println("Nombre: "+animal1.nombre);
                     System.out.println("Edad: "+animal1.edad); 
                     System.out.println("Tipo: "+animal1.tipo);
-                    System.out.println("Habitad :"+animal1.habitat);
+                    System.out.println("Habitat :"+animal1.habitat);
                     System.out.println("Almiento:"+animal1.alimento);
+                    
+                    System.out.println("");
+                    System.out.println("Información del animal 2");
+                    System.out.println("Nombre: "+animal2.nombre);
+                    System.out.println("Edad: "+animal2.edad); 
+                    System.out.println("Tipo: "+animal2.tipo);
+                    System.out.println("Habitat: "+animal2.habitat);
+                    System.out.println("Almiento: "+animal2.alimento);
+                    System.out.println("");
                     //se completa los campos de todos los animales
                 }
                 case 3 -> {
