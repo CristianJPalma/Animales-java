@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author SENA
+ * @author CristianJPalma
  */
 public class EjercicioAnimales {
 
@@ -29,20 +29,13 @@ public class EjercicioAnimales {
             //2. se crea el objeto Scanner
             Scanner scan = new Scanner(System.in);
             opcion = scan.nextInt();
-            //se necesita una estructura que me permita hacer una sección 
-            //si se cumple un valor
-            /*if(opcion==1){
-            System.out.println("Opción 1");
-        }else if
-             */
-            //se reinicia el Scanner
             scan = new Scanner(System.in);
             switch (opcion) {
                 case 1 -> {
                     System.out.println("Opción Ingresar los valores");
                     System.out.println("Información del animal 1");
                     System.out.print("Ingrese el nombre del primer animal: ");
-                    animal1.nombre=scan.nextLine();
+                    animal1.nombre= leerEntrada(scan, "Este campo no puede estar vacío. \nIngrese el nombre del primer animal: ");
                     boolean esIncorrecto=true;
                     do{
                         String entrada;
@@ -56,22 +49,19 @@ public class EjercicioAnimales {
                          //catch atrape el error
                             System.out.println("No ingresó un número");
                         }
-                        //ciclo loop
-                        //while=mientras se cumple la condición
-                        //mientras la condición tenga valor verdadero true
                     }while(esIncorrecto);
                 
                     System.out.print("Ingrese el tipo de animal: ");
-                    animal1.tipo=scan.nextLine();
+                    animal1.tipo= leerEntrada(scan, "Este campo no puede estar vacío. \nIngrese el tipo de animal: ");
                     System.out.print("Ingrese el habitat del animal: ");
-                    animal1.habitat=scan.nextLine();
+                    animal1.habitat= leerEntrada(scan, "Este campo no puede estar vacío. \nIngrese el habitat del animal: ");
                     System.out.print("Ingrese el tipo de alimento: ");
-                    animal1.alimento=scan.nextLine();
+                    animal1.alimento= leerEntrada(scan, "Este campo no puede estar vacío. \nIngrese el tipo de alimento: ");
                     System.out.println("");
                     
                     System.out.println("Información del animal 2");
                     System.out.print("Ingrese el nombre del segundo animal: ");
-                    animal2.nombre=scan.nextLine();
+                    animal2.nombre= leerEntrada(scan, "Este campo no puede estar vacío. \nIngrese el nombre del segundo animal: ");
                     boolean esIncorrecto2=true;
                     do{
                         String entrada;
@@ -85,29 +75,54 @@ public class EjercicioAnimales {
                          //catch atrape el error
                             System.out.println("No ingresó un número");
                         }
-                        //ciclo loop
-                        //while=mientras se cumple la condición
-                        //mientras la condición tenga valor verdadero true
                     }while(esIncorrecto2);
                 
                     System.out.print("Ingrese el tipo de animal: ");
-                    animal2.tipo=scan.nextLine();
+                    animal2.tipo = leerEntrada(scan, "Este campo no puede estar vacío. \nIngrese el tipo de animal: ");
                     System.out.print("Ingrese el habitat del animal: ");
-                    animal2.habitat=scan.nextLine();
+                    animal2.habitat= leerEntrada(scan, "Este campo no puede estar vacío. \nIngrese el habitat del animal: ");
                     System.out.print("Ingrese el tipo de alimento: ");
-                    animal2.alimento=scan.nextLine();
+                    animal2.alimento = leerEntrada(scan, "Este campo no puede estar vacío. \nIngrese el tipo de alimento: ");
                     System.out.println("");
-                    //se completa los campos de todos los animales
+                    
+                    System.out.println("Información del animal 3");
+                    System.out.print("Ingrese el nombre del tercer animal: ");
+                    animal3.nombre= leerEntrada(scan, "Este campo no puede estar vacío. \nIngrese el nombre del tercer animal: ");
+                    boolean esIncorrecto3=true;
+                    do{
+                        String entrada;
+                        try{//intente ejecutar la función
+                            System.out.print("Ingrese la edad del animal: ");
+                            entrada=scan.nextLine();
+                           animal3.edad = (short) Integer.parseInt(entrada);
+
+                            esIncorrecto3=false;
+                        }catch(NumberFormatException error){
+                         //catch atrape el error
+                            System.out.println("No ingresó un número");
+                        }
+                    }while(esIncorrecto3);
+                
+                    System.out.print("Ingrese el tipo de animal: ");
+                    animal3.tipo= leerEntrada(scan, "Este campo no puede estar vacío. \nIngrese el tipo de animal: ");
+                    System.out.print("Ingrese el habitat del animal: ");
+                    animal3.habitat= leerEntrada(scan, "Este campo no puede estar vacío. \nIngrese el habitat del animal: ");
+                    System.out.print("Ingrese el tipo de alimento: ");
+                    animal3.alimento= leerEntrada(scan, "Este campo no puede estar vacío. \nIngrese el tipo de alimento: ");
+                    System.out.println("");
                 }
+                
+                
                 case 2 -> {
+                    //se completa los campos de todos los animales
                     System.out.println("Opción Mostrar los valores");
                     System.out.println("");
                     System.out.println("Información del animal 1");
                     System.out.println("Nombre: "+animal1.nombre);
                     System.out.println("Edad: "+animal1.edad); 
                     System.out.println("Tipo: "+animal1.tipo);
-                    System.out.println("Habitat :"+animal1.habitat);
-                    System.out.println("Almiento:"+animal1.alimento);
+                    System.out.println("Habitat: "+animal1.habitat);
+                    System.out.println("Almiento: "+animal1.alimento);
                     
                     System.out.println("");
                     System.out.println("Información del animal 2");
@@ -117,7 +132,14 @@ public class EjercicioAnimales {
                     System.out.println("Habitat: "+animal2.habitat);
                     System.out.println("Almiento: "+animal2.alimento);
                     System.out.println("");
-                    //se completa los campos de todos los animales
+                    
+                    System.out.println("Información del animal 3");
+                    System.out.println("Nombre: "+animal3.nombre);
+                    System.out.println("Edad: "+animal3.edad); 
+                    System.out.println("Tipo: "+animal3.tipo);
+                    System.out.println("Habitat: "+animal3.habitat);
+                    System.out.println("Almiento: "+animal3.alimento);
+                    System.out.println("");
                 }
                 case 3 -> {
                     System.out.println("Hasta luego");
@@ -125,14 +147,19 @@ public class EjercicioAnimales {
                 default ->
                     System.out.println("Error opción no valida, vuelva intentarlo");
             }
-            /*
-            while=mientras
-            se repite mientras se cumple la condición
-            == es comparación
-            a==b indica a debe ser estrictamente igual b
-            a!=b indica que debe ser diferente a b
-             */
+
         } while (opcion != 3);
+    }
+    // Validacion para espacios en blanco
+    private static String leerEntrada(Scanner scan, String mensajeError) {
+        String entrada = "";
+        while (entrada.trim().isEmpty()) {
+            entrada = scan.nextLine();
+            if (entrada.trim().isEmpty()) {
+                System.out.print(mensajeError);
+            }
+        }
+        return entrada;
     }
 
 }
